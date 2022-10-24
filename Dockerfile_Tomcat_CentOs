@@ -1,11 +1,10 @@
 FROM centos
-MAINTAINER mylandmarktech@gmail.com
 RUN mkdir /opt/tomcat/
 WORKDIR /opt/tomcat
-ADD https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.65/bin/apache-tomcat-9.0.65.tar.gz .
+ADD https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.1/bin/apache-tomcat-10.1.1.tar.gz .
 RUN tar xvfz apache*.tar.gz \
-  &&  mv apache-tomcat-9.0.65/* /opt/tomcat/.  \
-  &&  yum -y install java  \
+  &&  mv apache-tomcat-10.1.1/* /opt/tomcat/.  \
+  &&  yum -yinstall java  \
   && java -version 
 EXPOSE 8080
 #CMD sh /opt/tomcat/bin/catalina.sh run
